@@ -43,40 +43,6 @@ describe("OpenRTB 2.3 unit test suite", function() {
       .imp([
           {
               "id":"1",
-              "native":{
-                "api": [ 3 ], 
-                "battr": [ 13, 14 ],
-                "request": {
-                  "ver": 1,
-                  "layout": 6,
-                  "assets": [
-                    {
-                      "id": 0,
-                      "req": 1,
-                      "title": {
-                        "len": 25
-                      }
-                    }, 
-                    { 
-                      "id": 1, 
-                      "req": 1, 
-                      "img": { 
-                        "type": 3, 
-                        "wmin": 100, 
-                        "hmin": 100
-                      } 
-                    },
-                    {
-                      "id": 3, 
-                      "req": 0, 
-                      "data": { 
-                        "type": 2,
-                        "len": 90
-                      }                       
-                    }
-                  ]
-                }
-              },
               "tagid": "eb09ff2a287598302fd631493949169b0d17f815",
               "bidfloor": 1.3
           }
@@ -133,20 +99,6 @@ describe("OpenRTB 2.3 unit test suite", function() {
           id: '1',
           bidfloor: 1.3,
           tagid: 'eb09ff2a287598302fd631493949169b0d17f815'
-        });
-
-        //Check imp.native object
-        var native = bidRequest.imp[0].native;
-        native.should.have.property('api', [3]);
-        native.should.have.property('battr', [13,14]);
-        native.should.have.property('request', {
-          assets: [
-            { id: 0, req: 1, title: { len: 25 } },
-            { id: 1, img: { hmin: 100, type: 3, wmin: 100 }, req: 1 },
-            { data: { len: 90, type: 2 }, id: 3, req: 0 }
-          ],
-          layout: 6,
-          ver: 1
         });
 
         //Check app object
