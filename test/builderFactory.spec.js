@@ -11,6 +11,7 @@ const PublisherBuilder = require('../lib/openrtb2_3/publisher').builder;
 const UserBuilder = require('../lib/openrtb2_3/user').builder;
 const BidBuilder = require('../lib/openrtb2_3/bid').builder;
 const PmpBuilder = require('../lib/openrtb2_3/pmp').builder;
+const DealBuilder = require('../lib/openrtb2_3/deal').builder;
 
 describe("The BuilderFactory should", () => {
   
@@ -100,6 +101,13 @@ describe("The BuilderFactory should", () => {
       builderType: 'pmp'
     });
     builder.should.be.an.instanceOf(PmpBuilder);
+  });
+
+  it("construct and return a deal builder", () => {
+    const builder = this.builderFactory.getBuilder({
+      builderType: 'deal'
+    });
+    builder.should.be.an.instanceOf(DealBuilder);
   });
 
 });

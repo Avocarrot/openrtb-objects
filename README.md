@@ -30,6 +30,8 @@ The library exposes object builders which are used to construct new objects.
   - Imp
     - Native
     - Banner
+    - Pmp
+      - Deal
   - App
     - Publisher
   - Site      
@@ -71,7 +73,19 @@ Not supported but most objects for v2.3 should work for this one too.
         }
       },
       "tagid": "eb09ff2a287598302fd631493949169b0d17f815",
-      "bidfloor": 1.3
+      "bidfloor": 1.3,
+      "pmp": {
+        "private_auction": 1,
+        "deals": [
+          { 
+            "id": 'deal1', 
+            "bidfloor": 5.5,
+            "at": 3,
+            "wseat": ["seat1"],
+            "wadomain": ["advertiser.com"]
+          }
+        ]
+      }
     }
   ])
   .app({
