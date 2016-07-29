@@ -145,6 +145,7 @@ Not supported but most objects for v2.3 should work for this one too.
           clearPrice: 0.9,
           adid: 1,
           id: '819582c3-96b2-401a-b60d-7ac3c117a513',
+          dealid: 'deal1',
           impid: 'e317ae49-8cd1-47b0-b022-02a8830182ce',
           price: 1.05,
           nurl: 'http://trackwin.com/win?pid=784170&data=OuJifVtEK&price=${AUCTION_PRICE}',
