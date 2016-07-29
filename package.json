@@ -1,10 +1,11 @@
 {
   "name": "openrtb",
-  "version": "3.2.1",
+  "version": "3.3.0",
   "description": "A Javascript library which builds and validates OpenRTB objects",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive test"
+    "test": "mocha --recursive test",
+    "cov": "NODE_ENV=test istanbul cover node_modules/.bin/_mocha -- --recursive test"
   },
   "repository": {
     "type": "git",
