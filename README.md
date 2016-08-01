@@ -80,6 +80,7 @@ Not supported but most objects for v2.3 should work for this one too.
           { 
             "id": 'deal1', 
             "bidfloor": 5.5,
+            "bidfloorcur": "USD",
             "at": 3,
             "wseat": ["seat1"],
             "wadomain": ["advertiser.com"]
