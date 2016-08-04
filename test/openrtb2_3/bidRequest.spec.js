@@ -25,7 +25,7 @@ describe("BidRequest tests", () =>  {
 
   describe("The BidRequestBuilder should", () =>  {
 
-    it.only("build a valid bid request object", () =>  {
+    it("build a valid bid request object", () =>  {
       var requestObj = {
         "ver": 1,
         "layout": 6,
@@ -65,30 +65,29 @@ describe("BidRequest tests", () =>  {
         .timestamp(moment.utc().format())
         .id('1234')
         .at(2)
-        .imp([
-            {
-                "id":"1",
-                "native":{
-                  "api": [ 3 ],
-                  "battr": [ 13, 14 ],
-                  "request": requestStr,
-                "tagid": "eb09ff2a287598302fd631493949169b0d17f815",
-                "bidfloor": 1.3,
-                "secure": 0,
-                "pmp": {
-                  "private_auction": 1,
-                  "deals": [
-                    { 
-                      "id": 'deal1', 
-                      "bidfloor": 5.5,
-                      "at": 3,
-                      "wseat": ["seat1"],
-                      "wadomain": ["advertiser.com"]
-                    }
-                  ]
+        .imp([{
+            "id":"1",
+            "native":{
+              "api": [ 3 ],
+              "battr": [ 13, 14 ],
+              "request": requestStr
+            },
+            "tagid": "eb09ff2a287598302fd631493949169b0d17f815",
+            "bidfloor": 1.3,
+            "secure": 0,
+            "pmp": {
+              "private_auction": 1,
+              "deals": [
+                { 
+                  "id": 'deal1', 
+                  "bidfloor": 5.5,
+                  "at": 3,
+                  "wseat": ["seat1"],
+                  "wadomain": ["advertiser.com"]
                 }
-              }
+              ]
             }
+          }
         ])
         .app({
             "id":"55",
@@ -172,7 +171,7 @@ describe("BidRequest tests", () =>  {
       console.log(err);
     }
 
-      bidRequest.should.have.property('timestamp', "2015-01-14T00:00:00+00:00");
+      bidRequest.should.have.property('timestamp', "2015-01-14T00:00:00Z");
       bidRequest.should.have.property('id', "1234");
       bidRequest.should.have.property('at', 2);
 
