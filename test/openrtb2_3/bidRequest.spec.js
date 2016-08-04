@@ -60,118 +60,115 @@ describe("BidRequest tests", () =>  {
       var requestStr = JSON.stringify(requestObj);
 
       const builder = new BidRequestBuilder();
-      try {
-        const bidRequest = builder
-        .timestamp(moment.utc().format())
-        .id('1234')
-        .at(2)
-        .imp([{
-            "id":"1",
-            "native":{
-              "api": [ 3 ],
-              "battr": [ 13, 14 ],
-              "request": requestStr
-            },
-            "tagid": "eb09ff2a287598302fd631493949169b0d17f815",
-            "bidfloor": 1.3,
-            "secure": 0,
-            "pmp": {
-              "private_auction": 1,
-              "deals": [
-                { 
-                  "id": 'deal1', 
-                  "bidfloor": 5.5,
-                  "at": 3,
-                  "wseat": ["seat1"],
-                  "wadomain": ["advertiser.com"]
-                }
-              ]
-            }
+      
+      const bidRequest = builder
+      .timestamp(moment.utc().format())
+      .id('1234')
+      .at(2)
+      .imp([{
+          "id":"1",
+          "native":{
+            "api": [ 3 ],
+            "battr": [ 13, 14 ],
+            "request": requestStr
+          },
+          "tagid": "eb09ff2a287598302fd631493949169b0d17f815",
+          "bidfloor": 1.3,
+          "secure": 0,
+          "pmp": {
+            "private_auction": 1,
+            "deals": [
+              { 
+                "id": 'deal1', 
+                "bidfloor": 5.5,
+                "at": 3,
+                "wseat": ["seat1"],
+                "wadomain": ["advertiser.com"]
+              }
+            ]
           }
-        ])
-        .app({
-            "id":"55",
-            "name":"Test App",
-            "bundle":"com.foo.example",
-            "cat":["IAB3-1"],
-            "storeurl": "http://www.example.com",
-            "publisher":{
-                "id": "6332",
-                "name": 'publisher 1'
-            }
-        })
-        .device({
-          "dnt":0,
-          "ua":"Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
-          "ip":"76.174.49.222",
-          "ifa": "AA000DFE74168477C70D291f574D344790E0BB11",
-          "connectiontype":2,
-          "devicetype":1,
-          "didsha1": "bbc9ff2a287598302fd631693949169b0d17f215",
-          "carrier": "o2",
-          "make": "samsung GT-I9300",
-          "model": "Android",
-          "language": "en",
-          "os": "Android",
-          "osv": "5.1.1",
-          "geo": {
-              "country": "UK",
-              "lat": null,
-              "lon": null
+        }
+      ])
+      .app({
+          "id":"55",
+          "name":"Test App",
+          "bundle":"com.foo.example",
+          "cat":["IAB3-1"],
+          "storeurl": "http://www.example.com",
+          "publisher":{
+              "id": "6332",
+              "name": 'publisher 1'
           }
-        })
-        .user({
-            "id":"55816b39711f9b5acf3b90e313ed29e51665623f",
-            "yob": 1987,
-            "gender": "M",
-        })
-        .bcat(["IAB10"])
-        .badv(["xxx.com"])
-        .tmax(200)
-        .site({
-            "id": "10",
-            "name": "Test",
-            "domain": "example.com",
-            "cat":["IAB3-1"],
-            "sectioncat":["IAB3-1"],
-            "pagecat":["IAB3-1"],
-            "page": "http://www.example.com/test",
-            "ref": "http://www.referrer.com",
-            "search": "search string",
-            "mobile": 0,
-            "privacypolicy": 0,
-            "publisher":{
-            "id": "6332",
-            "name": 'publisher 1'
-        },
-            "content": {
-                "id": "1234",
-                "episode": 1,
-                "title": "title example",
-                "series": "example serie",
-                "url": "http://www.content.com",
-                "language": 'EN'
-            },
-            "keywords": "keyword1,keyword2",
-            "ext": {
-            "extra": "1234"
+      })
+      .device({
+        "dnt":0,
+        "ua":"Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30",
+        "ip":"76.174.49.222",
+        "ifa": "AA000DFE74168477C70D291f574D344790E0BB11",
+        "connectiontype":2,
+        "devicetype":1,
+        "didsha1": "bbc9ff2a287598302fd631693949169b0d17f215",
+        "carrier": "o2",
+        "make": "samsung GT-I9300",
+        "model": "Android",
+        "language": "en",
+        "os": "Android",
+        "osv": "5.1.1",
+        "geo": {
+            "country": "UK",
+            "lat": null,
+            "lon": null
         }
-        })
-        .regs({
-            "coppa": 1,
-            "ext": {
-            "extra": "1234"
-        }
-        })
-        .ext({
-          'extra': '1234'
-        })
-        .build();
-    } catch(err) {
-      console.log(err);
-    }
+      })
+      .user({
+          "id":"55816b39711f9b5acf3b90e313ed29e51665623f",
+          "yob": 1987,
+          "gender": "M",
+      })
+      .bcat(["IAB10"])
+      .badv(["xxx.com"])
+      .tmax(200)
+      .site({
+          "id": "10",
+          "name": "Test",
+          "domain": "example.com",
+          "cat":["IAB3-1"],
+          "sectioncat":["IAB3-1"],
+          "pagecat":["IAB3-1"],
+          "page": "http://www.example.com/test",
+          "ref": "http://www.referrer.com",
+          "search": "search string",
+          "mobile": 0,
+          "privacypolicy": 0,
+          "publisher":{
+          "id": "6332",
+          "name": 'publisher 1'
+      },
+          "content": {
+              "id": "1234",
+              "episode": 1,
+              "title": "title example",
+              "series": "example serie",
+              "url": "http://www.content.com",
+              "language": 'EN'
+          },
+          "keywords": "keyword1,keyword2",
+          "ext": {
+          "extra": "1234"
+      }
+      })
+      .regs({
+          "coppa": 1,
+          "ext": {
+          "extra": "1234"
+      }
+      })
+      .ext({
+        'extra': '1234'
+      })
+      .build();
 
-      bidRequest.should.have.property('timestamp', "2015-01-14T00:00:00Z");
+      bidRequest.should.have.property('timestamp', "2015-01-14T00:00:00+00:00");
       bidRequest.should.have.property('id', "1234");
       bidRequest.should.have.property('at', 2);
 
@@ -307,14 +304,15 @@ describe("BidRequest tests", () =>  {
       });
     });
 
-    it("throw an error if a id was not provided", () =>  {
+    it("reject an invalid Bid Request", () => {
       const builder = new BidRequestBuilder();
+
       (() => {
         builder
         .timestamp(moment.utc().format())
+        .id('1')
         .build();
-      }).should.throw('BidRequest should have an id');
+      }).should.throw('Validation failed');
     });
-
   });
 });
