@@ -71,7 +71,7 @@ describe("BidResponse tests", () => {
         .seatbid(mockResponse.seatbid)
         .build();
 
-        bidResponse.should.have.property('timestamp', '2015-01-14T00:00:00Z');
+        bidResponse.should.have.property('timestamp', '2015-01-14T00:00:00+00:00');
         bidResponse.should.have.property('status', 1);
         bidResponse.should.have.property('id', "1234-5678");
         bidResponse.should.have.property('bidderName', 'test-bidder');

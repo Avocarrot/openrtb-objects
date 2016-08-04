@@ -172,7 +172,7 @@ describe("BidRequest tests", () =>  {
       console.log(err);
     }
 
-      bidRequest.should.have.property('timestamp', "2015-01-14T00:00:00Z");
+      bidRequest.should.have.property('timestamp', "2015-01-14T00:00:00+00:00");
       bidRequest.should.have.property('id', "1234");
       bidRequest.should.have.property('at', 2);
 
@@ -189,7 +189,9 @@ describe("BidRequest tests", () =>  {
       const native = bidRequest.imp[0].native;
       native.should.have.property('api', [3]);
       native.should.have.property('battr', [13,14]);
-      native.should.have.property('request', {
+      native.should.have.property('request')
+      var request = JSON.parse(native.request);
+      request.should.eql({
         assets: [
           { id: 0, req: 1, title: { len: 25 } },
           { id: 1, img: { hmin: 100, type: 3, wmin: 100 }, req: 1 },
