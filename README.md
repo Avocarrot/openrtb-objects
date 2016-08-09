@@ -289,6 +289,21 @@ If no ```valuesMap``` is passed the parsed values will be used. A special case i
 
 ```string``` is a required argument.
 
+##### `hasAdm()`
+
+Returns true if bid has an `adm` property otherwise false. 
+
+##### `isBelowFloor(bidfloor)`
+
+Returns true if bid price is below `bidfloor` otherwise false. 
+
+##### `isBlockedAdomain(badv)`
+
+Returns true if bid adomain is contained in `badv` otherwise false. 
+
+##### `isBlockedCat(bcat)`
+
+Returns true if bid category is contained in `bcat` otherwise false. 
 
 ## Disclaimer
 
