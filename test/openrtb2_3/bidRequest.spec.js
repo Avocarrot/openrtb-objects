@@ -168,7 +168,7 @@ describe("BidRequest tests", () =>  {
       })
       .build();
 
-      bidRequest.should.have.property('timestamp', "2015-01-14T00:00:00+00:00");
+      bidRequest.should.have.property('timestamp', "2015-01-14T00:00:00Z");
       bidRequest.should.have.property('id', "1234");
       bidRequest.should.have.property('at', 2);
 
