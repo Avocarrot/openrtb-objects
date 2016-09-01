@@ -93,6 +93,7 @@ describe("BidRequest tests", () =>  {
           "id":"55",
           "name":"Test App",
           "bundle":"com.foo.example",
+          "domain":"example.foo.com",
           "cat":["IAB3-1"],
           "storeurl": "http://www.example.com",
           "publisher":{
@@ -215,6 +216,7 @@ describe("BidRequest tests", () =>  {
         cat: [ 'IAB3-1' ],
         id: '55',
         bundle: 'com.foo.example',
+        domain: 'example.foo.com',
         name: 'Test App',
         storeurl: 'http://www.example.com'
       });
@@ -224,7 +226,7 @@ describe("BidRequest tests", () =>  {
 
       //Check device object
       bidRequest.device.should.have.properties({
-            carrier: 'o2',
+          carrier: 'o2',
           connectiontype: 2,
           didsha1: 'bbc9ff2a287598302fd631693949169b0d17f215',
           ua: 'Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
