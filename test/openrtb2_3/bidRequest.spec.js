@@ -25,7 +25,7 @@ describe("BidRequest tests", () =>  {
 
   describe("The BidRequestBuilder should", () =>  {
 
-    it("build a valid bid request object", () =>  {
+    it.only("build a valid bid request object", () =>  {
       var requestObj = {
         "ver": 1,
         "layout": 6,
@@ -60,11 +60,12 @@ describe("BidRequest tests", () =>  {
       var requestStr = JSON.stringify(requestObj);
 
       const builder = new BidRequestBuilder();
-      
+
       const bidRequest = builder
       .timestamp(moment.utc().format())
       .id('1234')
       .at(2)
+      .cur(["USD"])
       .imp([{
           "id":"1",
           "native":{
@@ -172,6 +173,8 @@ describe("BidRequest tests", () =>  {
       bidRequest.should.have.property('timestamp', "2015-01-14T00:00:00Z");
       bidRequest.should.have.property('id', "1234");
       bidRequest.should.have.property('at', 2);
+      // bidRequest.should.have.property('cur');
+      // bidRequest.cur.should.eql(["USD"]);
 
       //Check imp object
       bidRequest.imp.length.should.equal(1);
