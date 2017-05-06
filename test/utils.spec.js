@@ -1,9 +1,9 @@
-var removeEmptyValues = require('../lib/utils').removeEmptyValues;
+const { removeEmptyValues } = require('../lib/utils');
 
-describe("Utils module tests", function() {
+describe('Utils module tests', () => {
 
-  it("removeEmptyValues() should remove properties witn null or undefined values", function() {
-    var obj = {
+  it('removeEmptyValues() should remove properties witn null or undefined values', () => {
+    const obj = {
       prop1: 'prop1',
       prop2: null,
       prop3: undefined,
@@ -13,7 +13,7 @@ describe("Utils module tests", function() {
       }
     };
 
-    var cleaned = removeEmptyValues(obj);
+    const cleaned = removeEmptyValues(obj);
     cleaned.should.have.property('prop1', 'prop1');
     cleaned.should.not.have.property('prop2');
     cleaned.should.not.have.property('prop3');

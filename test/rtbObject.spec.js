@@ -1,20 +1,20 @@
-var RtbObject = require('../lib/rtbObject');
+const RtbObject = require('../lib/rtbObject');
 
-describe("The RtbObject should", function() {
-  var rtbObject;
-  beforeEach(function(){
+describe('The RtbObject should', () => {
+  let rtbObject;
+  beforeEach(() => {
     rtbObject = new RtbObject();
   });
 
-  it("convert to JSON string", function() {
+  it("convert to JSON string", () => {
     rtbObject.prop1 = 'prop1';
     rtbObject.prop2 = {
       nestedProp: 'nestedProp'
     };
-    rtbObject.prop3 = function(){
+    rtbObject.prop3 = () => {
       return 'prop3';
     };
-    var stringified = rtbObject.stringify();
+    const stringified = rtbObject.stringify();
     stringified.should.be.an.instanceOf(String);
     stringified.should.equal('{"prop1":"prop1","prop2":{"nestedProp":"nestedProp"}}');
   });

@@ -30,6 +30,7 @@ The library exposes object builders which are used to construct new objects.
   - Imp
     - Native
     - Banner
+    - Video
     - Pmp
       - Deal
   - App
