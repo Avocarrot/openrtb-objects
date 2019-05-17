@@ -63,7 +63,7 @@ Not supported but most objects for v2.3 should work for this one too.
     {
       "id":"1",
       "native":{
-        "request": {
+        "request": JSON.stringify({
           "ver": 1,
           "layout": 6,
           "assets": [
@@ -71,7 +71,7 @@ Not supported but most objects for v2.3 should work for this one too.
             { "id": 1, "req": 1, "img": { "type": 3, "wmin": 100, "hmin": 100 } },
             { "id": 3, "req": 0, "data": { "type": 2, "len": 90 } }
           ]
-        }
+        })
       },
       "tagid": "eb09ff2a287598302fd631493949169b0d17f815",
       "bidfloor": 1.3,
